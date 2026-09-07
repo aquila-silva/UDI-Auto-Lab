@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://udiautolab.vercel.app/sitemap.xml

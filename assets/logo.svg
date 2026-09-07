@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 242 64" role="img" aria-labelledby="logo-title">
+  <title id="logo-title">Udi Auto Lab</title>
+  <rect x="2" y="2" width="60" height="60" rx="2" fill="none" stroke="#2f80c9" stroke-width="3"/>
+  <text x="32" y="43" text-anchor="middle" fill="#2f80c9" font-family="Arial, sans-serif" font-size="25" font-weight="800" letter-spacing="1">UDI</text>
+  <text x="76" y="40" fill="#d7dde3" font-family="Arial, sans-serif" font-size="24" font-weight="700" letter-spacing="2">AUTO LAB</text>
+</svg>
