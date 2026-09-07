@@ -1,7 +1,7 @@
 const SUPABASE_URL = 'https://wdyusuhpmefxpbvwewwt.supabase.co';
 const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6IndkeXVzdWhwbWVmeHBidndld3d0Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODg3MzgzMjUsImV4cCI6MjEwNDMxNDMyNX0.A0jFTH-hqs1mBNZD1tUrhT4LsfbltEdMVq0k-18uXoc';
 
-const supabase = window.supabase
+const supabaseClient = window.supabase
   ? window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY)
   : null;
 
@@ -94,7 +94,7 @@ document.addEventListener('DOMContentLoaded', () => {
       return;
     }
 
-    if (!supabase) {
+    if (!supabaseClient) {
       if (status) {
         status.textContent =
           'Não foi possível conectar ao serviço. Tente novamente mais tarde.';
@@ -115,7 +115,7 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
     // Envia para o Supabase
-    const { error } = await supabase
+    const { error } = await supabaseClient
       .from('contatos')
       .insert([contact]);
 
