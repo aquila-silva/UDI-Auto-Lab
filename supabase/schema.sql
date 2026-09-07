@@ -13,6 +13,9 @@ create table if not exists public.contatos (
 
 alter table public.contatos enable row level security;
 
+grant insert on table public.contatos to anon;
+grant usage, select on sequence public.contatos_id_seq to anon;
+
 create policy "Permitir cadastro de contato com consentimento"
   on public.contatos
   for insert

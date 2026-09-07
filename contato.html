@@ -1,15 +1,220 @@
 <!doctype html>
 <html lang="pt-BR">
-<head>
-  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Entre em contato com a Udi Auto Lab para tirar dúvidas e agendar estética automotiva em Uberlândia.">
-  <meta name="author" content="Aquila Fernando Alves Silva"><meta name="theme-color" content="#07111f">
-  <link rel="icon" href="assets/logo.svg" type="image/svg+xml"><link rel="stylesheet" href="css/styles.css">
-  <title>Contato | Udi Auto Lab</title>
-</head>
-<body>
-  <a class="skip-link" href="#conteudo">Pular para o conteúdo</a><header class="site-header"><div class="container header-inner"><a class="brand" href="index.html" aria-label="Udi Auto Lab, página inicial"><img src="assets/logo.svg" alt="Udi Auto Lab" width="145" height="38"></a><button class="menu-toggle" type="button" aria-expanded="false" aria-controls="menu-principal">Menu</button><nav id="menu-principal" class="main-nav" aria-label="Navegação principal"><a href="index.html">Início</a><a href="servicos.html">Serviços</a><a href="quem-somos.html">Quem somos</a><a class="nav-cta is-active" href="contato.html" aria-current="page">Fale conosco</a></nav></div></header>
-  <main id="conteudo"><section class="contact-section"><div class="container contact-grid"><div><p class="eyebrow">Fale com a gente</p><h1>Vamos cuidar<br><span>do seu carro?</span></h1><p class="hero-text">Preencha o formulário e conte o que você precisa. Respondemos em horário comercial para combinar o melhor atendimento.</p><div class="contact-details"><div><span>Atendimento</span><strong>Uberlândia e região</strong></div><div><span>Horário</span><strong>Seg a sex, 8h às 18h</strong></div><div><span>Mensagem</span><strong>contato@udiautolab.com.br</strong></div></div></div>
-      <div class="form-card"><h2>Solicite um contato</h2><p class="form-intro">Seus dados serão usados somente para retornarmos sua mensagem.</p><form id="contact-form" novalidate data-supabase-table="contatos"><div class="field"><label for="nome">Nome completo</label><input id="nome" name="nome" type="text" autocomplete="name" required minlength="3" aria-describedby="erro-nome"><small class="field-error" id="erro-nome" data-error-for="nome"></small></div><div class="field"><label for="email">E-mail</label><input id="email" name="email" type="email" autocomplete="email" required aria-describedby="erro-email"><small class="field-error" id="erro-email" data-error-for="email"></small></div><div class="field"><label for="telefone">Telefone <span>(opcional)</span></label><input id="telefone" name="telefone" type="tel" autocomplete="tel" inputmode="tel" placeholder="(34) 99999-9999" aria-describedby="erro-telefone"><small class="field-error" id="erro-telefone" data-error-for="telefone"></small></div><div class="field"><label for="servico">Como podemos ajudar?</label><select id="servico" name="servico" required aria-describedby="erro-servico"><option value="">Selecione um serviço</option><option>Lavagem detalhada</option><option>Higienização interna</option><option>Polimento e brilho</option><option>Proteção de pintura</option><option>Ainda não sei</option></select><small class="field-error" id="erro-servico" data-error-for="servico"></small></div><div class="field"><label for="mensagem">Mensagem <span>(opcional)</span></label><textarea id="mensagem" name="mensagem" rows="4" maxlength="500" placeholder="Conte um pouco sobre seu carro..."></textarea></div><label class="consent"><input id="consentimento" name="consentimento" type="checkbox" required aria-describedby="erro-consentimento"><span>Li e concordo que a Udi Auto Lab use meus dados para entrar em contato sobre esta solicitação, conforme a <a href="#privacidade">Política de privacidade</a>.</span></label><small class="field-error" id="erro-consentimento" data-error-for="consentimento"></small><button class="button button-primary button-full" type="submit">Enviar solicitação <span aria-hidden="true">→</span></button><p class="form-status" id="form-status" role="status" aria-live="polite"></p></form></div></div></section><section id="privacidade" class="privacy-note"><div class="container"><h2>Privacidade e LGPD</h2><p>Coletamos apenas os dados necessários para responder ao seu contato. Não vendemos ou compartilhamos suas informações para publicidade. Você pode solicitar acesso, correção ou exclusão dos dados pelo e-mail contato@udiautolab.com.br.</p></div></section></main>
-  <footer class="site-footer"><div class="container footer-top"><a class="brand" href="index.html"><img src="assets/logo.svg" alt="Udi Auto Lab" width="145" height="38"></a><p>Estética automotiva com cuidado e transparência em Uberlândia.</p><div class="footer-links"><a href="servicos.html">Serviços</a><a href="quem-somos.html">Quem somos</a></div></div><div class="container footer-bottom"><span>© 2026 Udi Auto Lab. Projeto fictício.</span><span>Desenvolvido por Aquila Fernando Alves Silva.</span></div></footer><script src="js/main.js" defer></script>
-</body></html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Entre em contato com a Udi Auto Lab para tirar dúvidas e agendar estética automotiva em Uberlândia."
+    />
+    <meta name="author" content="Aquila Fernando Alves Silva" />
+    <meta name="theme-color" content="#07111f" />
+    <link rel="icon" href="assets/logo.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="css/styles.css" />
+    <title>Contato | Udi Auto Lab</title>
+  </head>
+  <body>
+    <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+    <header class="site-header">
+      <div class="container header-inner">
+        <a
+          class="brand"
+          href="index.html"
+          aria-label="Udi Auto Lab, página inicial"
+          ><img
+            src="assets/logo.svg"
+            alt="Udi Auto Lab"
+            width="145"
+            height="38" /></a
+        ><button
+          class="menu-toggle"
+          type="button"
+          aria-expanded="false"
+          aria-controls="menu-principal"
+        >
+          Menu
+        </button>
+        <nav
+          id="menu-principal"
+          class="main-nav"
+          aria-label="Navegação principal"
+        >
+          <a href="index.html">Início</a><a href="servicos.html">Serviços</a
+          ><a href="quem-somos.html">Quem somos</a
+          ><a class="nav-cta is-active" href="contato.html" aria-current="page"
+            >Fale conosco</a
+          >
+        </nav>
+      </div>
+    </header>
+    <main id="conteudo">
+      <section class="contact-section">
+        <div class="container contact-grid">
+          <div>
+            <p class="eyebrow">Fale com a gente</p>
+            <h1>Vamos cuidar<br /><span>do seu carro?</span></h1>
+            <p class="hero-text">
+              Preencha o formulário e conte o que você precisa. Respondemos em
+              horário comercial para combinar o melhor atendimento.
+            </p>
+            <div class="contact-details">
+              <div>
+                <span>Atendimento</span><strong>Uberlândia e região</strong>
+              </div>
+              <div>
+                <span>Horário</span><strong>Seg a sex, 8h às 18h</strong>
+              </div>
+              <div>
+                <span>Mensagem</span><strong>contato@udiautolab.com.br</strong>
+              </div>
+            </div>
+          </div>
+          <div class="form-card">
+            <h2>Solicite um contato</h2>
+            <p class="form-intro">
+              Seus dados serão usados somente para retornarmos sua mensagem.
+            </p>
+            <form id="contact-form" novalidate data-supabase-table="contatos">
+              <div class="field">
+                <label for="nome">Nome completo</label
+                ><input
+                  id="nome"
+                  name="nome"
+                  type="text"
+                  autocomplete="name"
+                  required
+                  minlength="3"
+                  aria-describedby="erro-nome"
+                /><small
+                  class="field-error"
+                  id="erro-nome"
+                  data-error-for="nome"
+                ></small>
+              </div>
+              <div class="field">
+                <label for="email">E-mail</label
+                ><input
+                  id="email"
+                  name="email"
+                  type="email"
+                  autocomplete="email"
+                  required
+                  aria-describedby="erro-email"
+                /><small
+                  class="field-error"
+                  id="erro-email"
+                  data-error-for="email"
+                ></small>
+              </div>
+              <div class="field">
+                <label for="telefone">Telefone <span>(opcional)</span></label
+                ><input
+                  id="telefone"
+                  name="telefone"
+                  type="tel"
+                  autocomplete="tel"
+                  inputmode="tel"
+                  placeholder="(34) 99999-9999"
+                  aria-describedby="erro-telefone"
+                /><small
+                  class="field-error"
+                  id="erro-telefone"
+                  data-error-for="telefone"
+                ></small>
+              </div>
+              <div class="field">
+                <label for="servico">Como podemos ajudar?</label
+                ><select
+                  id="servico"
+                  name="servico"
+                  required
+                  aria-describedby="erro-servico"
+                >
+                  <option value="">Selecione um serviço</option>
+                  <option>Lavagem detalhada</option>
+                  <option>Higienização interna</option>
+                  <option>Polimento e brilho</option>
+                  <option>Proteção de pintura</option>
+                  <option>Ainda não sei</option></select
+                ><small
+                  class="field-error"
+                  id="erro-servico"
+                  data-error-for="servico"
+                ></small>
+              </div>
+              <div class="field">
+                <label for="mensagem">Mensagem <span>(opcional)</span></label
+                ><textarea
+                  id="mensagem"
+                  name="mensagem"
+                  rows="4"
+                  maxlength="500"
+                  placeholder="Conte um pouco sobre seu carro..."
+                ></textarea>
+              </div>
+              <label class="consent"
+                ><input
+                  id="consentimento"
+                  name="consentimento"
+                  type="checkbox"
+                  required
+                  aria-describedby="erro-consentimento"
+                /><span
+                  >Li e concordo que a Udi Auto Lab use meus dados para entrar
+                  em contato sobre esta solicitação, conforme a
+                  <a href="#privacidade">Política de privacidade</a>.</span
+                ></label
+              ><small
+                class="field-error"
+                id="erro-consentimento"
+                data-error-for="consentimento"
+              ></small
+              ><button class="button button-primary button-full" type="submit">
+                Enviar solicitação <span aria-hidden="true">→</span>
+              </button>
+              <p
+                class="form-status"
+                id="form-status"
+                role="status"
+                aria-live="polite"
+              ></p>
+            </form>
+          </div>
+        </div>
+      </section>
+      <section id="privacidade" class="privacy-note">
+        <div class="container">
+          <h2>Privacidade e LGPD</h2>
+          <p>
+            Coletamos apenas os dados necessários para responder ao seu contato.
+            Não vendemos ou compartilhamos suas informações para publicidade.
+            Você pode solicitar acesso, correção ou exclusão dos dados pelo
+            e-mail contato@udiautolab.com.br.
+          </p>
+        </div>
+      </section>
+    </main>
+    <footer class="site-footer">
+      <div class="container footer-top">
+        <a class="brand" href="index.html"
+          ><img
+            src="assets/logo.svg"
+            alt="Udi Auto Lab"
+            width="145"
+            height="38"
+        /></a>
+        <p>Estética automotiva com cuidado e transparência em Uberlândia.</p>
+        <div class="footer-links">
+          <a href="servicos.html">Serviços</a
+          ><a href="quem-somos.html">Quem somos</a>
+        </div>
+      </div>
+      <div class="container footer-bottom">
+        <span>© 2026 Udi Auto Lab. Projeto fictício.</span
+        ><span>Desenvolvido por Aquila Fernando Alves Silva.</span>
+      </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="js/main.js" defer></script>
+  </body>
+</html>
