@@ -1,10 +1,3 @@
-const SUPABASE_URL = 'https://wdyusuhpmefxpbvwewwt.supabase.co';
-const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6IndkeXVzdWhwbWVmeHBidndld3d0Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODg3MzgzMjUsImV4cCI6MjEwNDMxNDMyNX0.A0jFTH-hqs1mBNZD1tUrhT4LsfbltEdMVq0k-18uXoc';
-
-const supabaseClient = window.supabase
-  ? window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY)
-  : null;
-
 document.addEventListener('DOMContentLoaded', () => {
   const menuButton = document.querySelector('.menu-toggle');
   const navigation = document.querySelector('.main-nav');
@@ -21,7 +14,9 @@ document.addEventListener('DOMContentLoaded', () => {
   if (!form) return;
 
   const status = document.querySelector('#form-status');
+  const submitButton = form.querySelector('button[type="submit"]');
   const fields = ['nome', 'email', 'servico', 'consentimento'];
+  const supabaseClient = window.UdiAutoLabSupabase?.getClient() || null;
 
   const showError = (fieldName, message) => {
     const error = document.querySelector(
@@ -114,10 +109,18 @@ document.addEventListener('DOMContentLoaded', () => {
       consentido_em: new Date().toISOString()
     };
 
-    // Envia para o Supabase
-    const { error } = await supabaseClient
-      .from('contatos')
-      .insert([contact]);
+    if (submitButton) submitButton.disabled = true;
+
+    let error;
+
+    try {
+      ({ error } = await supabaseClient
+        .from('contatos')
+        .insert([contact]));
+    } catch (requestError) {
+      console.error('Erro ao salvar contato:', requestError);
+      error = requestError;
+    }
 
     if (error) {
       console.error('Erro ao salvar contato:', error);
@@ -129,10 +132,11 @@ document.addEventListener('DOMContentLoaded', () => {
         status.className = 'form-status is-error';
       }
 
+      if (submitButton) submitButton.disabled = false;
+
       return;
     }
 
-    // Só limpa o formulário depois que o Supabase confirmar o INSERT
     form.reset();
 
     if (status) {
@@ -141,5 +145,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
       status.className = 'form-status is-success';
     }
+
+    if (submitButton) submitButton.disabled = false;
   });
 });
